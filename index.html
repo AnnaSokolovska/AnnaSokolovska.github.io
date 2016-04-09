@@ -41,16 +41,24 @@
         <script src="index.js"></script>
     </div>
     <script type="text/javascript">
+    $(document).ready(function () {
+        var width = $('body').innerWidth();
+        var height = $('body').innerHeight();
+        if (width < 1300) {
+            $('.det').removeClass('det').addClass('small_det');
+        } else if (width > 1300 && height > 640) {
+            $('.small_det').removeClass('small_det').addClass('det');
+        }
+    });
     $(window).resize(function () { 
         var width = $('body').innerWidth();
         var height = $('body').innerHeight();
         if (width < 1300) {
-     $('.det').removeClass('det').addClass('small_det');
-   } else if (width > 1300 && height > 640)
-   {
-    $('.small_det').removeClass('small_det').addClass('det');
-   }
-     });
+            $('.det').removeClass('det').addClass('small_det');
+        } else if (width > 1300 && height > 640) {
+            $('.small_det').removeClass('small_det').addClass('det');
+        }
+    });
    </script>
 </body>
 </html>
